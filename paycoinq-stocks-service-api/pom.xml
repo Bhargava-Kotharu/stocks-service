@@ -54,9 +54,6 @@
 			<version>1.5.4</version>
 		</dependency>
 
-		<!-- Lombok Dependency <dependency> <groupId>org.projectlombok</groupId> 
-			<artifactId>lombok</artifactId> </dependency> -->
-
 		<!-- Swagger API Docs Dependencies -->
 		<dependency>
 			<groupId>io.springfox</groupId>

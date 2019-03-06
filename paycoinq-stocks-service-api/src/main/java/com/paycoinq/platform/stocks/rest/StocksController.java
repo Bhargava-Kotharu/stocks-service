@@ -33,7 +33,7 @@ import com.paycoinq.platform.stocks.service.StocksService;
  */
 @RestController
 @RequestMapping("/api/v1/stocks")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*") // Do not do this in production.
 public class StocksController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(StocksController.class);
