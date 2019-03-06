@@ -1,3 +1,43 @@
-<p>
-  update-stock works!
-</p>
+<h1>Update Stock</h1>
+
+<form [formGroup]="updateStockForm" (ngSubmit)="updateStock(stock.id)">
+
+  <h5 *ngIf="success">Validations succeded. Updating stock details!</h5>
+  <h5 *ngIf="!success && submitted" class="error">{{errorMessage}}</h5>
+  <label>
+    Stock Name:
+    <input type="text" formControlName="name"  placeholder="name" name="name" class="form-control" id="name">
+    <div *ngIf="submitted && updateStockForm.controls.name.errors" class="error">
+      <div *ngIf="updateStockForm.controls.name.errors.required">Stock Name is required.</div>
+    </div>
+  </label>
+
+  <label>
+    Stock Code:
+    <input type="text" formControlName="code">
+    <div *ngIf="submitted && updateStockForm.controls.code.errors" class="error">
+      <div *ngIf="updateStockForm.controls.code.errors.required">Stock code is required.</div>
+    </div>
+  </label>
+
+  <label>
+    Current Price:
+    <input type="text" formControlName="currentPrice">
+    <div *ngIf="submitted && updateStockForm.controls.currentPrice.errors" class="error">
+      <div *ngIf="updateStockForm.controls.currentPrice.errors.required">Current Price is required.</div>
+    </div>
+  </label>
+
+  <label>
+    Currency Code:
+    <input type="text" formControlName="currencyCode">
+    <div *ngIf="submitted && updateStockForm.controls.currencyCode.errors" class="error">
+      <div *ngIf="updateStockForm.controls.currencyCode.errors.required">Currency Code is required</div>
+    </div>
+  </label>
+
+
+  <input type="submit" value="Update" class="cta">
+
+</form>
+

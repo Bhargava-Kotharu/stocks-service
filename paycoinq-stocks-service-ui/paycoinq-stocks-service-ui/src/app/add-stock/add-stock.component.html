@@ -1,3 +1,44 @@
 <h1>Add Stock</h1>
 
-<button (click)="getStocks()">Save</button>
+<form [formGroup]="addStockForm" (ngSubmit)="addStock()">
+
+  <h5 *ngIf="success">Validations succeded. Creating new stock!</h5>
+  <h5 *ngIf="!success && submitted" class="error">{{errorMessage}}</h5>
+
+  <label>
+    Stock Name:
+    <input type="text" formControlName="name">
+    <div *ngIf="submitted && addStockForm.controls.name.errors" class="error">
+      <div *ngIf="addStockForm.controls.name.errors.required">Stock Name is required.</div>
+    </div>
+  </label>
+
+  <label>
+    Stock Code:
+    <input type="text" formControlName="code">
+    <div *ngIf="submitted && addStockForm.controls.code.errors" class="error">
+      <div *ngIf="addStockForm.controls.code.errors.required">Stock code is required.</div>
+    </div>
+  </label>
+
+  <label>
+    Current Price:
+    <input type="text" formControlName="currentPrice">
+    <div *ngIf="submitted && addStockForm.controls.currentPrice.errors" class="error">
+      <div *ngIf="addStockForm.controls.currentPrice.errors.required">Current Price is required.</div>
+    </div>
+  </label>
+
+  <label>
+    Currency Code:
+    <input type="text" formControlName="currencyCode">
+    <div *ngIf="submitted && addStockForm.controls.currencyCode.errors" class="error">
+      <div *ngIf="addStockForm.controls.currencyCode.errors.required">Currency Code is required</div>
+    </div>
+  </label>
+
+
+  <input type="submit" value="Save" class="cta">
+
+</form>
+

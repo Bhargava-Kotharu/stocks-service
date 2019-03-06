@@ -1,31 +1,27 @@
 <h2 style="margin: auto"> Stocks</h2>
-  <!--<button class="btn btn-danger" style="width:100px" (click)="addUser()"> Add User</button>-->
   <table  *ngIf="stocks">
     <thead>
     <tr>
+      <th>Id</th>
       <th>Stock Name</th>
       <th>Stock Code</th>
       <th>Current Price</th>
       <th>Currency Code</th>
       <th>Created Date</th>
       <th>Last Updated</th>
+      <th>Action</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let stock of stocks">
+      <td>{{stock.id}}</td>
       <td>{{stock.name}}</td>
       <td>{{stock.code}}</td>
       <td>{{stock.currentPrice}}</td>
       <td>{{stock.currencyCode}}</td>
       <td>{{stock.createdDate}}</td>
       <td>{{stock.lastUpdated}}</td>
+      <td><button type="button" (click)="updateStock(stock)" >Update</button><button type="button" (click)="deleteStock(stock.id)">Delete</button></td>
     </tr>
     </tbody>
   </table>
-
-<ul *ngIf="stocks">
-  <li *ngFor="let stock of stocks.data">
-    <img [src]="stock.avatar">
-    <p>{{ stock.first_name }} {{ stock.last_name }}</p>
-  </li>
-</ul>
