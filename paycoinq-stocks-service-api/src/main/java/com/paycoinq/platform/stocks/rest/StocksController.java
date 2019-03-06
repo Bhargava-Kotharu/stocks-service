@@ -41,6 +41,13 @@ public class StocksController {
 	@Autowired
 	private StocksService stocksService;
 
+	/**
+	 * Get Stocks API
+	 * 
+	 * @param page
+	 * @param pageSize
+	 * @return
+	 */
 	@GetMapping
 	public ResponseEntity<List<StocksDTO>> getStocks(
 			@RequestParam(required = false, name = "page", defaultValue = "0") int page,
@@ -49,6 +56,13 @@ public class StocksController {
 		return ResponseEntity.ok(stocksService.getStocks(page, pageSize));
 	}
 
+	/**
+	 * Get Stock By ID
+	 * 
+	 * @param stockId
+	 * @return
+	 * @throws StockNotFoundException
+	 */
 	@GetMapping("/{stockId}")
 	public ResponseEntity<StocksDTO> getStock(@PathVariable(required = true, name = "stockId") Long stockId)
 			throws StockNotFoundException {
@@ -57,6 +71,14 @@ public class StocksController {
 		return ResponseEntity.ok(dto);
 	}
 
+	/**
+	 * Update Stock API
+	 * 
+	 * @param stockId
+	 * @param stockRequest
+	 * @return
+	 * @throws StockNotFoundException
+	 */
 	@PutMapping("/{stockId}")
 	public ResponseEntity<StocksDTO> updateStock(@PathVariable(required = true, name = "stockId") Long stockId,
 			@Valid @RequestBody StockRequest stockRequest) throws StockNotFoundException {
@@ -65,6 +87,12 @@ public class StocksController {
 		return ResponseEntity.ok(dto);
 	}
 
+	/**
+	 * Create Stock API
+	 * 
+	 * @param stockRequest
+	 * @return
+	 */
 	@PostMapping
 	public ResponseEntity<StocksDTO> createStock(@Valid @RequestBody StockRequest stockRequest) {
 		LOGGER.info("Received request to create stock | StockRequest={}", stockRequest);
@@ -72,6 +100,13 @@ public class StocksController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(dto);
 	}
 
+	/**
+	 * Delete Stock API
+	 * 
+	 * @param stockId
+	 * @return
+	 * @throws StockNotFoundException
+	 */
 	@DeleteMapping("/{stockId}")
 	public ResponseEntity<?> deleteStock(@PathVariable(required = true, name = "stockId") Long stockId)
 			throws StockNotFoundException {
