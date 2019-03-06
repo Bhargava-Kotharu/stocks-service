@@ -1,0 +1,10 @@
+INSERT INTO stocks (id, name, code, current_price, currency_code, created_date, updated_date) VALUES (1, 'Aegon NV', 'AEB', 102, 'USD', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO stocks (id, name, code, current_price, currency_code, created_date, updated_date) VALUES (2, 'AED Stock Quote', 'AED', 11, 'USD', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO stocks (id, name, code, current_price, currency_code, created_date, updated_date) VALUES (3, 'ASML Holding N.V.', 'ASML', 320.40, 'USD', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO stocks (id, name, code, current_price, currency_code, created_date, updated_date) VALUES (4, 'Core Laboratories N.V.', 'CLB', 87.34, 'USD', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO stocks (id, name, code, current_price, currency_code, created_date, updated_date) VALUES (5, 'ING Group, N.V.', 'ISG', 290.34, 'USD', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO stocks (id, name, code, current_price, currency_code, created_date, updated_date) VALUES (6, 'LyondellBasell Industries NV', 'LYB', 33.90, 'USD', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO stocks (id, name, code, current_price, currency_code, created_date, updated_date) VALUES (7, 'NXPI Stock Quote', 'NXPI', 67.78, 'USD', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO stocks (id, name, code, current_price, currency_code, created_date, updated_date) VALUES (8, 'Qiagen N.V.', 'QGEN', 78, 'USD', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO stocks (id, name, code, current_price, currency_code, created_date, updated_date) VALUES (9, 'VEON Ltd.', 'VEON', 23.98, 'USD', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO stocks (id, name, code, current_price, currency_code, created_date, updated_date) VALUES (10, 'Yandex N.V.', 'YNDX', 45.56, 'USD', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
